@@ -10,10 +10,25 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Note: pay close attention to your current directory when trying to open "foo.txt"
 
 # YOUR CODE HERE
+with open("src//foo.txt") as f:
+    print(f.read())
 
+
+print(f)
+print("just to check if the file is closed:", f.closed)
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
 # then close the file. Open up "bar.txt" and inspect it to make
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
+
+
+f = open("bar.txt", "w")
+f.write("Hello there\n meine Freunde \n Privet")
+f.close()
+
+f = open("bar.txt")
+f_text = f.read()
+f.close()
+print(f_text)
